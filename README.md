@@ -17,7 +17,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/ReverendTrivium/Tomodachi-Street">
-    <img src="https://i.imgur.com/jPCU0bG.png" alt="Logo" width="150" height="150">
+    <img src="https://i.imgur.com/ikSlRmi.png" alt="Logo" width="150" height="150">
   </a>
 
 <h3 align="center">Tomodachi Street</h3>

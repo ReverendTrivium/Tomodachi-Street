@@ -1,0 +1,89 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: Derrick.Eberlein
+      changes:
+        - createTable:
+            tableName: event
+            columns:
+              - column:
+                  name: id
+                  type: BINARY(16)
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: VARCHAR(64)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: address
+                  type: VARCHAR(64)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: city
+                  type: VARCHAR(32)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: state
+                  type: VARCHAR(32)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: zip
+                  type: VARCHAR(16)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: startDate
+                  type: DATETIME(3)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: endDate
+                  type: DATETIME(3)
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: 2
+      author: Derrick.Eberlein
+      changes:
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  type: BINARY(16)
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: username
+                  type: VARCHAR(50)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: password
+                  type: VARCHAR(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: role
+                  type: VARCHAR(50)
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: 3
+      author: Derrick.Eberlein
+      changes:
+        - createIndex:
+            tableName: users
+            indexName: idx_username
+            unique: true
+            columns:
+              - column:
+                  name: username

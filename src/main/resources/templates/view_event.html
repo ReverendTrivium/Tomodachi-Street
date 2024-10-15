@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="English" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Bootstrap from webjars -->
+    <link href="/webjars/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+    <title>View Event</title>
+</head>
+<body>
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">Event Management</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/events">Events</a>
+                </li>
+                <!-- Show "Create New Event" only if the user has the ROLE_ADMIN authority -->
+                <li class="nav-item" th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}">
+                    <a class="nav-link" href="/events/create">Create New Event</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Main Content -->
+<div class="container mt-4">
+    <h1>Event Details</h1>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title" th:text="${event.name}">Event Name</h5>
+            <p class="card-text">
+                <strong>Address:</strong> <span th:text="${event.address}">123 Main Street</span><br/>
+                <strong>City:</strong> <span th:text="${event.city}">City Name</span><br/>
+                <strong>State:</strong> <span th:text="${event.state}">State Name</span><br/>
+                <strong>Zip:</strong> <span th:text="${event.zip}">Zip Code</span><br/>
+                <strong>Start Date and Time:</strong> <span th:text="${#dates.format(event.startDate, 'MM/dd/yyyy hh:mm a')}">Start Date</span><br/>
+                <strong>End Date and Time:</strong> <span th:text="${#dates.format(event.endDate, 'MM/dd/yyyy hh:mm a')}">End Date</span>
+            </p>
+            <!-- Show Edit and Delete buttons only if the user has the ROLE_ADMIN authority -->
+            <div th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}">
+                <a th:href="@{/events/edit/{id}(id=${event.id})}" class="btn btn-primary">Edit</a>
+                <a th:href="@{/events/delete/{id}(id=${event.id})}" class="btn btn-danger">Delete</a>
+            </div>
+            <a th:href="@{/events}" class="btn btn-secondary">Back to Events</a>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS from webjars -->
+<script src="/webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

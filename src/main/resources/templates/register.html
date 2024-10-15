@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Bootstrap from webjars -->
+    <link href="/webjars/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+    <title>Register</title>
+</head>
+<body>
+<h1>Register</h1>
+<form th:action="@{/register}" method="post" th:object="${user}">
+    <label>Username:</label>
+    <input type="text" th:field="*{username}" /><br/>
+    <label>Password:</label>
+    <input type="password" th:field="*{password}" /><br/>
+    <button type="submit">Register</button>
+</form>
+</body>
+</html>

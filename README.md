@@ -46,13 +46,6 @@
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -84,27 +77,6 @@ Below is a comprehensive list of the frameworks and libraries used to build the 
 * [Lombok](https://projectlombok.org)
 * [Spring Framework](https://spring.io/projects/spring-framework)
 * [HTML 5](https://www.w3schools.com/html/)
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-<!-- GETTING STARTED -->
-## Self Hosting
-To get a local copy up and running follow these simple steps.
-
-### Prerequisites
-
-You must have [Java JDK 21](https://www.oracle.com/java/technologies/downloads/) installed on your machine.
-
-### Installation
-
-_Below are the necessary steps needed to run this project._
-
-1. Clone the repo:
-   ```sh
-   git clone https://github.com/ReverendTrivium/Tomodachi-Street.git
-   ```
-2. Create a `.env` file in the root project folder and populate it with all the variables in `.env.example`.
-3. You can now build and run the application using gradle or the provided docker file.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 

@@ -60,7 +60,7 @@ event scheduling, content moderation, and role-based access control. Built using
 with Spring Boot, the system provides secure authentication and authorization, 
 persistent storage using MySQL, and integrates advanced features like error handling, 
 session management, and Webjars for front-end dependencies. Future additions include connecting web app
-to the [Tomodachi Street Discord Bot](https://github.com/ReverendTrivium/RedactedBot) to allow users to join
+to the [Redacted Discord Bot](https://github.com/ReverendTrivium/RedactedBot) to allow users to join
 discord server via custom invite link on the webpage and connecting created events on the discord to newly created events
 on the website using the details of those newly created events on discord.
 
